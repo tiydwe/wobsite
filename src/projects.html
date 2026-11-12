@@ -1,9 +1,65 @@
 <html>
-  <head>
-    <title>Projects</title>
-    <link rel="stylesheet" href="static/style.css">
-  </head>
-  <body>
-    aklsjoiawemui 
-  </body>
+
+<head>
+  <title>Projects</title>
+  <link rel="stylesheet" href="static/style.css">
+</head>
+
+<body>
+  <div class="header-div">
+    My Projects
+  </div>
+  <main class="content">
+    <div class="project-select-container">
+      Contains
+      <div class="project-search-container">
+        <input class="project-search" type="text" id="searchInput" placeholder="Search by name...">
+      </div>
+      and
+      <div class="project-select-container">
+        <select class="project-select" id="project-select">
+          <option value="-"></option>
+          <option value="newest">Sort by newest</option>
+          <option value="oldest">Sort by oldest</option>
+          <option value="complete">Filter by completed</option>
+          <option value="in-progress">Filter by in progress</option>
+        </select>
+      </div>
+    </div>
+    <div class="project-grid-container" id="project-grid-container">
+      <div class="project-grid-item" data-name="Lorem ipsum" data-date="2026-10-03" data-tag="complete">
+        <div class="project-item-image">
+          <img class="project-item-image-img" src="assets/project-thumbnails/mandelbrot.png">
+        </div>
+        <div class="project-item-title"><a class="project-item-link" href="projects/mandelbrot.html"></a>Pocket Mandelbrot
+          Viewer</div>
+        <div class="project-item-content">A bare-bones mandelbrot set viewer that you can use by pasting into the URL
+          bar of a brower - no internet required.<br><br>
+          <small>Completed: 2026-10-03</small>
+        </div>
+      </div>
+      <div class="project-grid-item" data-name="Lorem ipsum" data-date="2000-01-01" data-tag="complete">
+        <div class="project-item-image">
+          <img class="project-item-image-img" src="assets/bear.png">
+        </div>
+        <div class="project-item-title"><a class="project-item-link" href="projects/awoieumcaowiectmjalwwkjf.html"></a>Lorem ipsum</div>
+        <div class="project-item-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at ipsum
+          nec lacus varius elementum.<br><br>
+          <small>Completed: 2000-01-01</small>
+        </div>
+      </div>
+    </div>
+    <div class="project-nothing-found" id="project-nothing-found" style="display: none;">
+      There aren't any projects matching your search!
+    </div>
+    <!---->
+    <!--automatic comments!-->
+  </main>
+  <footer>
+    <div>This website is open source! <a href=https://github.com/tiydwe/wobsite>Github</a></div>
+  </footer>
+
+  <script src="static/scripts/project.js"></script>
+</body>
+
 </html>

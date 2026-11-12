@@ -2,12 +2,12 @@
   background-color: #71a5d3;
   width: 100%;
   text-align: center;
-  font-size: xx-large;
+  font-size: xxx-large;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-weight: 700;
   margin: 0;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 body{
@@ -17,9 +17,119 @@ body{
   flex-direction: column;
 }
 
+button {
+  min-height: 20px;
+  min-width: 50px;
+  padding: 10px;
+}
+
 .content{
   flex:1;
   text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+
+
+
+.project-select-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  margin: 10px;
+  justify-content: center;
+  font-size: x-large;
+}
+
+.project-search{
+  width: 400px;
+  height: 45px;
+  padding: 10px 15px;
+  font-size: 18px;
+  box-sizing: border-box;
+}
+
+.project-select{
+  width: 200px;
+  height: 45px;
+  padding: 10px 15px;
+  font-size: 18px;
+  box-sizing: border-box;
+}
+
+
+
+
+.project-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  gap: 16px;
+}
+
+.project-grid-item {
+  padding: 0;
+  text-align: center;
+  border-style: solid;
+  border-radius: 6px;
+  border-color: #000000;
+  height: 300px;
+  position: relative; 
+}
+
+.project-item-link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active,
+a:focus {
+  color: inherit;
+  text-decoration: none;
+  background-color: transparent;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+.project-item-image {
+  margin: 0;
+  padding: 0;
+  height: 170px;
+}
+
+.project-item-image-img{
+  margin: 0;
+  padding: 0;
+  width: 296px;
+  height: 170px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.project-item-title {
+  text-align: right;
+  font-size: x-large;
+  margin:5px;
+}
+
+.project-item-content {
+  text-align: left;
+  font-size: small;
+  margin:5px;
 }
 
 footer{

@@ -1,0 +1,46 @@
+<html>
+
+<head>
+  <title>Pocket Mandelbrot</title>
+  <link rel="stylesheet" href="static/style.css">
+</head>
+
+<body>
+  <div class="header-div">
+    Pocket Mandelbrot Viewer
+  </div>
+  <main class="content">
+    A simple, bare-bones, mandelbrot set viewer that can run in the browser URI bar! No web server or internet required.
+    It might be a bit laggy because it doesn't use webworkers or anything, but it's super simple and fits under 3kb. If
+    you want to read more about it, check out the github page (linked below)<br>
+    <button id="launchBtn">Launch in new tab</button><br>
+    <small>This project was made for SHRINK, a Hack Club program</small><br>
+    Source: <a href="https://github.com/tiydwe/shrink_mandlebrot">Github</a>
+  </main>
+  <footer>
+    <div>This website is open source! <a href=https://github.com/tiydwe/wobsite>Github</a></div>
+  </footer>
+  <script>
+    document.getElementById('launchBtn').addEventListener('click', async () => {
+      const newTab = window.open('', '_blank');
+      newTab.document.write('<p>Loading from GitHub...</p>');
+
+      try {
+        const rawUrl = 'https://raw.githubusercontent.com/tiydwe/shrink_mandlebrot/refs/heads/main/URI.txt';
+        const response = await fetch(rawUrl);
+        const dataUri = await response.text();
+
+        const encodedHtml = dataUri.replace(/^data:text\/html,?/i, '');
+        const decodedHtml = decodeURIComponent(encodedHtml);
+
+        newTab.document.open();
+        newTab.document.write(decodedHtml);
+        newTab.document.close();
+      } catch (error) {
+        newTab.document.body.innerHTML = `<p style="color:red;">Failed to load: ${error.message}</p>`;
+      }
+    });
+  </script>
+</body>
+
+</html>
